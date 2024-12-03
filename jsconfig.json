@@ -12,6 +12,7 @@
       "@/context/*":["context/*"],
       "@/styles/*":["styles/*"],
       "@/constants/*":["constants/*"],
+      "@/hooks/*":["hooks/*"],
     }
   }
 }
