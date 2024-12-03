@@ -11,6 +11,7 @@
       "@/lib/*":["lib/*"],
       "@/context/*":["context/*"],
       "@/styles/*":["styles/*"],
+      "@/constants/*":["constants/*"],
     }
   }
 }
