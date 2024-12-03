@@ -46,6 +46,10 @@ module.exports = {
       fotFamily: {
         sans: ["var(--font-vazir)", ...fontFamily.sans],
       },
+      container: {
+        center: true,
+        padding: "1rem",
+      },
     },
   },
   plugins: [],
