@@ -1,13 +1,11 @@
 import Link from "next/link";
 import CoverImage from "./CoverImage";
-import Image from "next/image";
 import { ClockIcon } from "@heroicons/react/24/outline";
-import Avatar from "@/ui/Avatar";
 import Author from "./Author";
 import PostInteraction from "./PostInteraction";
 
 async function PostList() {
-  await new Promise((res) => setTimeout(() => res(), 2000));
+  // await new Promise((res) => setTimeout(() => res(), 2000));
   const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/post/list`);
   const {
     data: { posts },

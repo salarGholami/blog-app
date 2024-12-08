@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 async function CategoryList() {
-  await new Promise((res) => setTimeout(() => res(), 2500));
+  // await new Promise((res) => setTimeout(() => res(), 2500));
 
   const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/category/list`);
   const {
