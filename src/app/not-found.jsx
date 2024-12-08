@@ -1,4 +1,5 @@
 "use client";
+
 import useMoveBack from "@/hooks/useMoveBack";
 import { ArrowRightIcon } from "@heroicons/react/24/outline";
 
@@ -10,9 +11,9 @@ function NotFound() {
       <div className="container xl:max-w-screen-xl">
         <div className="flex justify-center pt-10">
           <div>
-            <h1 className="text-xl font-bold text-secondary-700 mb-8">
+            <p className="text-xl font-bold text-red-700 mb-8">
               صفحه ای که دنبالش بودید، پیدا نشد
-            </h1>
+            </p>
             <button
               onClick={moveBack}
               className="flex items-center gap-x-2 text-secondary-500"

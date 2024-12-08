@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { notFound } from "next/navigation";
 
 async function SinglePost({ params }) {
   await new Promise((res) => setTimeout(() => res(), 2000));
@@ -9,6 +10,8 @@ async function SinglePost({ params }) {
 
   const { data } = await res.json();
   const { post } = data || {};
+
+  if (!post) notFound();
 
   return (
     <div className="text-secondary-600 max-w-screen-md mx-auto">
