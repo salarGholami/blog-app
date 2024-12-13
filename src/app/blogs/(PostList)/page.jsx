@@ -1,6 +1,9 @@
 import { Suspense } from "react";
 import Spinner from "@/ui/Spinner";
 import PostList from "../_components/PostList";
+// ? how to revalidate
+
+export const revalidate = 20;
 
 async function BlogsPage() {
   return (

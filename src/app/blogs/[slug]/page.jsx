@@ -10,7 +10,8 @@ export async function generateStaticParams() {
   return slugs;
 }
 
-export async function generateMetadata({ params }) {
+export async function generateMetadata(props) {
+  const params = await props.params;
   const post = await getPostBySlug(params.slug);
 
   return {
@@ -18,7 +19,8 @@ export async function generateMetadata({ params }) {
   };
 }
 
-async function SinglePost({ params }) {
+async function SinglePost(props) {
+  const params = await props.params;
   const post = await getPostBySlug(params.slug);
 
   if (!post) notFound();
