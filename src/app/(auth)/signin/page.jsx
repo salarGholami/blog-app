@@ -4,10 +4,8 @@ import RHFTextField from "@/ui/RHFTextField";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { signinApi } from "@/services/authService";
-import toast from "react-hot-toast";
-import { useRouter } from "next/navigation";
 import Link from "next/link";
+import { useAuth } from "@/context/AuthContext";
 
 const schema = yup
   .object({
@@ -29,24 +27,16 @@ function Signin() {
     mode: "onTouched",
   });
 
-  const router = useRouter();
+  const { signin } = useAuth();
 
   const onSubmit = async (values) => {
-    try {
-      const { user, message } = await signinApi(values);
-      console.log(user, message);
-      toast.success(message);
-      // router.push("/profile");
-    } catch (error) {
-      toast.error(error?.response?.data?.message);
-      console.log(error?.response?.data?.message);
-    }
+    await signin(values);
   };
 
   return (
     <div>
       <h1 className="text-xl font-bold text-secondary-500 text-center mb-6">
-       ورود
+        ورود
       </h1>
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-10">
         <RHFTextField
@@ -70,7 +60,9 @@ function Signin() {
         <Button type="submit" variant="primary" className="w-full">
           تایید
         </Button>
-      <Link href="/signup" className="text-secondary-500 text-center">ثبت نام</Link>
+        <Link href="/signup" className="text-secondary-500 text-center">
+          ثبت نام
+        </Link>
       </form>
     </div>
   );
