@@ -7,3 +7,7 @@ export async function signupApi(data) {
 export async function signinApi(data) {
   return http.post("/user/signin", data).then(({ data }) => data.data);
 }
+
+export async function getUserApi() {
+  return http.post("/user/profile").then(({ data }) => data.data);
+}
