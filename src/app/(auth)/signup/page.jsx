@@ -18,7 +18,7 @@ const schema = yup
     email: yup
       .string()
       .email("ایمیل نا معتبر است !")
-      .required("نام و نام خانوداگی الزامی است !"),
+      .required(" ایمیل الزامی است !"),
     password: yup.string().required("رمز عبور الزامی است !"),
   })
   .required();
