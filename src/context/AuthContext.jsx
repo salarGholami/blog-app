@@ -75,7 +75,6 @@ export default function AuthProvider({ children }) {
     } catch (error) {
       const errMsg = error?.response?.data?.message;
       dispatch({ type: "rejected", payload: errMsg });
-      toast.error(errMsg);
     }
   }
 

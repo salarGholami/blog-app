@@ -10,7 +10,6 @@ function CoverImage({ title, coverImageUrl, slug }) {
           alt={title}
           fill
           className="object-cover object-center hover:scale-110 transition-all duration-300 ease-out"
-          quality={90}
         />
       </Link>
     </div>
