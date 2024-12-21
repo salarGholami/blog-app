@@ -6,6 +6,7 @@ import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import Link from "next/link";
 import { useAuth } from "@/context/AuthContext";
+import SpinnerMini from "@/ui/SpinnerMini";
 
 const schema = yup
   .object({
@@ -57,13 +58,19 @@ function Signin() {
           isRequired
           errors={errors}
         />
-        <Button type="submit" variant="primary" className="w-full">
-          تایید
-        </Button>
-        <Link href="/signup" className="text-secondary-500 text-center">
-          ثبت نام
-        </Link>
+        <>
+          {isLoading ? (
+            <SpinnerMini />
+          ) : (
+            <Button type="submit" variant="primary" className="w-full">
+              تایید
+            </Button>
+          )}
+        </>
       </form>
+      <Link href="/signup" className="text-secondary-500 mt-6 text-center">
+        ثبت نام
+      </Link>
     </div>
   );
 }
