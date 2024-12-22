@@ -1,4 +1,3 @@
-"use Client";
 import Link from "next/link";
 import CoverImage from "./CoverImage";
 import { ClockIcon } from "@heroicons/react/24/outline";
