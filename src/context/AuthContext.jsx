@@ -71,7 +71,6 @@ export default function AuthProvider({ children }) {
       await new Promise((resolve) => setTimeout(resolve, 3000));
       const { user } = await getUserApi();
       dispatch({ type: "user/loaded", payload: user });
-      console.log(user);
     } catch (error) {
       const errMsg = error?.response?.data?.message;
       dispatch({ type: "rejected", payload: errMsg });
