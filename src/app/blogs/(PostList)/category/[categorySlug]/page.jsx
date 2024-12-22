@@ -16,7 +16,7 @@ async function Category({ params }) {
           پستی در این دسته بندی پیدا نشد !
         </p>
       ) : (
-        <PostList />
+        <PostList posts={posts} />
       )}
     </div>
   );

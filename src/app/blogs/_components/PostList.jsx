@@ -3,15 +3,8 @@ import CoverImage from "./CoverImage";
 import { ClockIcon } from "@heroicons/react/24/outline";
 import Author from "./Author";
 import PostInteraction from "./PostInteraction";
-import { getPosts } from "@/services/postServices";
-import setCookieOnRequest from "@/utils/setCookieOnRequest";
-import { cookies } from "next/headers";
 
-async function PostList() {
-  const cookieStore = cookies();
-  const options = setCookieOnRequest(cookieStore);
-  const posts = await getPosts(options);
-
+async function PostList({ posts }) {
   return posts.length > 0 ? (
     <div className="grid grid-cols-12 gap-8">
       {posts.map((post) => (
@@ -46,3 +39,4 @@ async function PostList() {
 }
 
 export default PostList;
+ 
