@@ -1,15 +1,27 @@
+"use client";
 import { Button } from "@headlessui/react";
 import { QuestionMarkCircleIcon } from "@heroicons/react/24/outline";
 import Comment from "./Comment";
 import classNames from "classnames";
+import Modal from "@/ui/Modal";
+import { useState } from "react";
 
 function PostComment({ post: { comments, _id: postId } }) {
+  const [open, setOpen] = useState(false);
   return (
     <div className="mb-10">
+      <Modal
+        open={open}
+        onClose={() => setOpen(false)}
+        title="عنوان"
+        description="توضیحات زیاد است برادر"
+      >
+        هرچی که میخوای به عنوان محتویات مدال میخوای
+      </Modal>
       <div className="flex flex-col items-center lg:flex-row justify-between gap-y-3 mb-8">
         <h2 className="text-2xl font-bold text-secondary-800">نظرات</h2>
         <Button
-        //   onClick={() => addNewCommentHandler(null)}
+          //   onClick={() => addNewCommentHandler(null)}
           variant="outline"
           className="flex items-center py-2"
         >
