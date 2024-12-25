@@ -1,5 +1,6 @@
 "use Client";
 
+import { createComment } from "@/lib/actions";
 import Button from "@/ui/Button";
 import TextArea from "@/ui/TextArea";
 import { useState } from "react";
@@ -10,7 +11,7 @@ function CommentForm() {
     <div>
       <div className="flex justify-center mt-4">
         <div className="max-w-md w-full">
-          <form className="space-y-7">
+          <form action={createComment} className="space-y-7">
             <TextArea
               name="text"
               label="متن نظر"
