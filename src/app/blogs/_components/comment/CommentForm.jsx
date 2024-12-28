@@ -1,7 +1,7 @@
 "use Client";
 
 import { createComment } from "@/lib/actions";
-import Button from "@/ui/Button";
+import SubmitButton from "@/ui/SubmitButton";
 import TextArea from "@/ui/TextArea";
 import { useState } from "react";
 
@@ -20,7 +20,7 @@ function CommentForm({ postId, parentId }) {
               isRequired
               onChange={(e) => setText(e.target.value)}
             />
-            <Button>تایید</Button>
+            <SubmitButton>تایید</SubmitButton>
           </form>
         </div>
       </div>

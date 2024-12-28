@@ -2,6 +2,7 @@ import Avatar from "@/ui/Avatar";
 import { Button } from "@headlessui/react";
 import { ArrowUturnRightIcon } from "@heroicons/react/24/outline";
 
+
 function Comment({ comment, onAddComment }) {
   return (
     <>
@@ -19,7 +20,7 @@ function Comment({ comment, onAddComment }) {
               {comment.createdAt}
             </span>
           </div>
-        </div>
+        </div> 
         <div>
           {comment.openToComment && (
             <Button
